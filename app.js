@@ -14,7 +14,7 @@ const authRoute = require('./routes/auth')
 app.use(cors())
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+//app.use(express.static(path.join(__dirname, 'client/build')));
 
 dotenv.config();
 
@@ -30,9 +30,9 @@ app.use(
         extended: false
     }) 
 )
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
 mongoose.connect(process.env.DB_CONNECT, { 
     useUnifiedTopology: true,    
@@ -48,4 +48,4 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }));
 
-app.listen(process.env.PORT, 4000)
+app.listen(process.env.PORT , 4000)

@@ -31,7 +31,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "https://textworlds.herokuapp.com/",
+  "proxy": "https://localhost:4000/",
   "browserslist": {
     "production": [
       ">0.2%",

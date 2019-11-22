@@ -8,7 +8,7 @@ import Container from './Container';
 
 
 const client = new ApolloClient({
-  uri: 'https://textworlds.herokuapp.com/graphql',
+  uri: 'https://localhost:4000/graphql',
 });
 
 
