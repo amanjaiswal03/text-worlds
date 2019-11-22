@@ -1,7 +1,8 @@
 import React from 'react'
-import { List, Image } from 'semantic-ui-react'
+import { List, Image,Segment } from 'semantic-ui-react'
 import Header from '../Header/Header'
 import WorldDescription from './WorldDescription';
+import Truncate from 'react-truncate';
 import { Link } from 'react-router-dom';
 import p1 from '../../assets/Worlds/p1.png'
 import p2 from '../../assets/Worlds/p2.png'
@@ -32,7 +33,11 @@ if (error) return <p>Error :(</p>;
                 <List.Content style={{ display: 'inline-block', marginLeft: "2vw" }}>
                   <Link to = {'/world/' + world._id}><List.Header><div className = "world-header">{ world.name }</div></List.Header></Link>
                     <List.Description>
-                        <WorldDescription>{ world.description }</WorldDescription>
+                        <Segment className = "world-description-list">
+                        <Truncate lines={1} ellipsis={<span>...<a>See more</a> </span>}>
+                            {world.description}
+                        </Truncate>
+                        </Segment>
                     </List.Description>
                 </List.Content>
               </List.Item>

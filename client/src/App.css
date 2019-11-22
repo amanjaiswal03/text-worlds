@@ -4,6 +4,9 @@
   margin-top: 10vh;
 }
 
+.world-description-list{
+  width: 40vw;
+}
 .logo-parent {
   display: flex;
   justify-content: center;
